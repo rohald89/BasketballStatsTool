@@ -34,13 +34,14 @@ def balance_teams(players):
             team['players'].append(player)
     return balanced_teams
 
-
-def show_menu(teams):
+def print_menu():
     print("BASKETBALL TEAM STATS TOOL\n")
     print("---- MENU----\n")
     print("Here are your choices:\n 1) Display Team Stats\n 2) Quit\n")
 
+def show_menu(teams):
     while True:
+        print_menu()
         try: 
             option = int(input('Enter an option: '))
             if option < 1 or option > 2:
@@ -52,8 +53,6 @@ def show_menu(teams):
         else: 
             if option == 1:
                 display_team_stats(teams)
-                print("---- MENU----\n")
-                print("Here are your choices:\n 1) Display Team Stats\n 2) Quit\n")
                 continue
             elif option == 2:
                 print("Thanks for visiting, hope to see you again soon!")
