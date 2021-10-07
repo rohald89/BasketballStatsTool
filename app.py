@@ -1,4 +1,5 @@
 import constants
+import copy
 
 
 def clean_data():
@@ -6,7 +7,7 @@ def clean_data():
     store the height as an integer 
     and change the experience to be a boolean
     '''
-    players = constants.PLAYERS
+    players = copy.deepcopy(constants.PLAYERS)
 
     for player in players:
         player['height'] = int(player['height'][:2])
@@ -15,7 +16,6 @@ def clean_data():
         else:
             player['experience'] = False
         player['guardians'] = player['guardians'].split(' and ')
-
     return players
 
 
